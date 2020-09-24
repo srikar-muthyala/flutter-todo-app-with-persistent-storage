@@ -32,15 +32,40 @@ class TextContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-      width: double.infinity,
+      width: 300,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.white),
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Text(
-          title ?? "undefined",
-          style: TextStyle(fontSize: 30),
-        ),
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: 80,
+            left: 40,
+            child: Text(
+              title ?? "undefined",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87),
+            ),
+          ),
+          Positioned(
+            bottom: 35,
+            left: 40,
+            child: Container(
+              width: 250,
+              child: Text(
+                'Sub tasks functionality yet to be added.',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w900,
+                ),
+                maxLines: 2,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
