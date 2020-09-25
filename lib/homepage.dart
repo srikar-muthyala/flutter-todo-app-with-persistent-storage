@@ -82,16 +82,26 @@ class _HomePageState extends State<HomePage> {
                           return SingleChildScrollView(
                             child: Container(
                               height: 300,
-                              child: ListView.builder(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                itemCount: snapshot.data.length,
-                                itemBuilder: (context, index) {
-                                  tasks_count = snapshot.data.length;
-                                  return TextContainer(
-                                    title: snapshot.data[index].title,
-                                  );
-                                },
+                              child: ScrollConfiguration(
+                                behavior: NoGlowBehaviour(),
+                                child: ListView.builder(
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: snapshot.data.length,
+                                  itemBuilder: (context, index) {
+                                    tasks_count = snapshot.data.length;
+                                    return GestureDetector(
+                                      onTap: () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => TaskPage(
+                                                  task: snapshot.data[index]))),
+                                      child: TextContainer(
+                                        title: snapshot.data[index].title,
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           );
@@ -107,11 +117,17 @@ class _HomePageState extends State<HomePage> {
                 child: GestureDetector(
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TaskPage()),
+                    MaterialPageRoute(
+                        builder: (context) => TaskPage(
+                              task: null,
+                            )),
                   ).then((value) {
                     setState(() {});
                   }),
-                  child: MinimalButton(),
+                  child: MinimalButton(
+                    image_location: "assets/images/add_icon.png",
+                    color_code: 0xff7349fe,
+                  ),
                 ),
               ),
             ],
