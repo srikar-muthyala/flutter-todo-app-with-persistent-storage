@@ -15,4 +15,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-[!alt](https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093419.png)
+![alt](https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093419.png)
