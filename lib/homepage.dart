@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite/utils/utils.dart';
 import 'package:todo_app/database_helper.dart';
 import 'package:todo_app/task_page.dart';
 import 'package:todo_app/widgets.dart';
@@ -79,30 +80,51 @@ class _HomePageState extends State<HomePage> {
                         initialData: [],
                         future: _dbHelper.getTasks(),
                         builder: (context, snapshot) {
-                          return SingleChildScrollView(
-                            child: Container(
-                              height: 300,
-                              child: ScrollConfiguration(
-                                behavior: NoGlowBehaviour(),
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: snapshot.data.length,
-                                  itemBuilder: (context, index) {
-                                    tasks_count = snapshot.data.length;
-                                    return GestureDetector(
-                                      onTap: () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => TaskPage(
-                                                  task: snapshot.data[index]))),
-                                      child: TextContainer(
-                                        title: snapshot.data[index].title,
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
+                          // return SingleChildScrollView(
+                          //   child: Container(
+                          //     height: 300,
+                          //     child: ScrollConfiguration(
+                          //       behavior: NoGlowBehaviour(),
+                          //       child: ListView.builder(
+                          //         shrinkWrap: true,
+                          //         scrollDirection: Axis.horizontal,
+                          //         itemCount: snapshot.data.length,
+                          //         itemBuilder: (context, index) {
+                          //           tasks_count = snapshot.data.length;
+                          //           return GestureDetector(
+                          //             onTap: () => Navigator.push(
+                          //                 context,
+                          //                 MaterialPageRoute(
+                          //                     builder: (context) => TaskPage(
+                          //                         task: snapshot.data[index]))),
+                          //             child: TextContainer(
+                          //               title: snapshot.data[index].title,
+                          //             ),
+                          //           );
+                          //         },
+                          //       ),
+                          //     ),
+                          //   ),
+                          // );
+
+                          return Container(
+                            height: 300,
+                            child: PageView.builder(
+                              itemCount: snapshot.data.length,
+                              physics: BouncingScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                tasks_count = snapshot.data.length;
+                                return GestureDetector(
+                                  onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TaskPage(
+                                              task: snapshot.data[index]))),
+                                  child: TextContainer(
+                                    title: snapshot.data[index].title,
+                                  ),
+                                );
+                              },
                             ),
                           );
                         },

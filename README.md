@@ -14,12 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-
-<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093419.png" width="200" />
-<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093433.png" width="200" />
-<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093447.png" width="200" />
-<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093458.png" width="200" />
-<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093477.png" width="200" />
-
-
