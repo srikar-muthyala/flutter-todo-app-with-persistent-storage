@@ -16,3 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ![alt](https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093419.png width=100)
+<img src="https://github.com/srikar-muthyala/flutter-todo-app-with-persistent-storage/blob/master/images/Screenshot_1601093419.png" width="100" height="100"/>
